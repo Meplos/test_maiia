@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Builder
@@ -18,9 +19,19 @@ import java.time.LocalDateTime;
 @Entity
 public class Availability {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer practitionerId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
+
+    public boolean isAvaillable(List<Appointment> appointments) {
+        for (Appointment appointment : appointments) {
+            if (getStartDate().isEqual(appointment.getStartDate()) || getEndDate().isEqual(appointment.getEndDate())) {
+                return false;
+            }
+
+        }
+        return true;
+    }
 }
