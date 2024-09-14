@@ -29,8 +29,8 @@ public class ProAppointmentService {
         var appointment = Appointment.builder()
                 .patientId(appointmentDTO.getPatientId())
                 .practitionerId(appointmentDTO.getPractitionerId())
-                .startDate(appointmentDTO.getStart())
-                .endDate(appointmentDTO.getEnd())
+                .startDate(appointmentDTO.getStartDate())
+                .endDate(appointmentDTO.getEndDate())
                 .build();
         appointmentRepository.save(appointment);
         return appointment;

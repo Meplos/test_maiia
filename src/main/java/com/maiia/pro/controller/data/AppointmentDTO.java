@@ -9,6 +9,6 @@ import java.time.LocalDateTime;
 public class AppointmentDTO {
     int practitionerId;
     int patientId;
-    LocalDateTime start;
-    LocalDateTime end;
+    LocalDateTime startDate;
+    LocalDateTime endDate;
 }

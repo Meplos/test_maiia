@@ -88,7 +88,6 @@ public class ProAvailabilityService {
             freeSlot.add(slot);
             return freeSlot;
         }
-
         var start = slot.getStartDate();
         for (Appointment appointment : appointments) {
             if (appointment.getStartDate().isAfter(slot.getEndDate())) {
